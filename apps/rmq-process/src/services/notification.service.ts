@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class RmqProcessService {
-  async defaultNestJS() {
+export class NotificationService {
+  async handler() {
     return;
   }
 }

@@ -14,4 +14,9 @@ export class AppController {
   async queue() {
     return this.appService.queue();
   }
+
+  @Get('exchange')
+  async exchange() {
+    return this.appService.exchange();
+  }
 }

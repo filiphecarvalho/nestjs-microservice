@@ -14,4 +14,14 @@ export class AppService {
     const data = { message: 'Email enviado para a queue' };
     await this.rabbitmqService.publishInQueue('email', JSON.stringify(data));
   }
+
+  async exchange() {
+    await this.rabbitmqService.start();
+    const data = { message: 'Email enviado para a exchange (email)' };
+    await this.rabbitmqService.publishInExchange(
+      'amq.direct',
+      'rmq-process',
+      JSON.stringify(data),
+    );
+  }
 }

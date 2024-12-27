@@ -1,1 +1,5 @@
+### Request
 GET http://localhost:3333/queue
+
+### Request
+GET http://localhost:3333/exchange
