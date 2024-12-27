@@ -6,8 +6,12 @@ export class AppService {
   constructor(private readonly rabbitmqService: RabbitmqService) {}
 
   async defaultNestJS() {
-    this.rabbitmqService.instance.emit('pattern-nestjs', {
-      message: 'Nova mensagem para o RabbitMQ',
-    });
+    return;
+  }
+
+  async queue() {
+    await this.rabbitmqService.start();
+    const data = { message: 'Email enviado para a queue' };
+    await this.rabbitmqService.publishInQueue('email', JSON.stringify(data));
   }
 }

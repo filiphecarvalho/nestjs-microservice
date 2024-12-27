@@ -9,4 +9,9 @@ export class AppController {
   async defaultNestJS() {
     return this.appService.defaultNestJS();
   }
+
+  @Get('queue')
+  async queue() {
+    return this.appService.queue();
+  }
 }
